@@ -1,34 +1,40 @@
 function feltolt() {
-    let hozzaad = document.createElement("li");
+    let bevitel = document.getElementById("bevitel").value;
 
-    let pipa = document.createElement("input");
-    pipa.setAttribute("type", "checkbox");
-    pipa.setAttribute("id","check");
-    pipa.setAttribute("class","pipa");
-    pipa.addEventListener("click", pipa);
+    if (bevitel.trim()=="") {
+        alert("nem lehet üres!");
+        return;
+    }else{
+        
+        let hozzaad = document.createElement("div");
+        let pipa = document.createElement("input");
+        pipa.setAttribute("type", "checkbox");
+        pipa.setAttribute("id","check");
+        pipa.setAttribute("class","pipaa");
+        pipa.addEventListener("click", pipa);
+        pipa.addEventListener("click",athuz);
 
-    let txt = document.createElement("label");
-    txt.innerHTML = document.getElementById("bevitel").value;
-    txt.setAttribute("class","txt");
+        let txt = document.createElement("label");
+        txt.innerHTML = document.getElementById("bevitel").value;
+        txt.setAttribute("class","txt");
 
-    let gomb = document.createElement("text");
-    gomb.addEventListener("click", torol);
-    gomb.innerHTML = "X";
+        let gomb = document.createElement("text");
+        gomb.setAttribute("class","torles");
+        gomb.addEventListener("click", torol);
+        gomb.innerHTML = "X";
 
-    hozzaad.appendChild(pipa);
-    hozzaad.appendChild(txt);
-    hozzaad.appendChild(gomb);
-    
-    document.getElementById("lista").appendChild(hozzaad);
-
-    //bekell fejezni
-   /* function athuz(){
-        hozzaad.setAttribute("class","athuzva");
+        hozzaad.appendChild(pipa);
+        hozzaad.appendChild(txt);
+        hozzaad.appendChild(gomb);
+        
+        document.getElementById("lista").appendChild(hozzaad);
     }
 
-    if (document.getElementById('check').checked) {
-        athuz();
-    }*/
+}
+
+function athuz(e){
+    let text = e.target.parentNode.getElementsByTagName("label")[0];
+    text.classList.toggle("athuzva");
 }
 
 function mezoUres() {

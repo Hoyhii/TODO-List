@@ -1,13 +1,16 @@
 .athuzva {
     text-decoration: line-through;
 }
-.main{
-    text-align: center;
-
-}
 .txt{
-    margin-right:4%;
+    margin-left: 5%;
+}
+.torles{
+    float:right;
 }
 .pipa{
-    margin-right:5px;
+    float:left;
+}
+
+.beviteli{
+    background-color: black;
 }
